@@ -15,11 +15,11 @@ namespace ECommerce{
             Console.WriteLine( "You're logged in... ");
         }
         public void Buy(){
-            Console.WriteLine( "Click me and buuy");
+            Console.WriteLine( "Buy");
 
         }
         public void MyOrder(){
-            Console.WriteLine("Add to cart");
+            Console.WriteLine("View my order");
         }
         public void WishList(){
         Console.WriteLine("Add to whish list");
