@@ -4,15 +4,26 @@ namespace ECommerce{
     class Customer{
         protected int Id;
         protected string Name;
+        private string FirstName;
+        private string  LastName;
         protected string Surname;
         protected string Address;
         protected string City;
         protected string Email;
         protected string Password;
 
+        
+       
+
+        public Customer(string firstName, string lastName, string mail){
+                
+                this.FirstName = firstName;
+                this.LastName = lastName;
+                this.Email = mail;
+        }
 
         public void Login(){
-            Console.WriteLine( "You're logged in... ");
+            Console.WriteLine( $"Hi,{this.FirstName} {this.LastName} ,your mail: {this.Email}. Well done you 're loggin in.");
         }
         public void Buy(){
             Console.WriteLine( "Buy");
