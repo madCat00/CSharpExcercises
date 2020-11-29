@@ -1,6 +1,7 @@
 ﻿using System;
 using ECommerce;
 
+
 namespace CSharpExercises
 {
     class Program
@@ -31,6 +32,13 @@ namespace CSharpExercises
             // Customer firstCustomer = new Customer("francesco","Rossi","Email : Hotmail.com");
 
             firstCustomer.Login();
+
+            DateTime today = new DateTime(2020,11,29,10,30,50); 
+
+            OrderHeader one = new OrderHeader(77,123456,today.ToString());
+
+            one.CreateOrder();
+
         }
     }
 }

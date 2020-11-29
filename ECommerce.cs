@@ -9,13 +9,10 @@ namespace ECommerce{
         protected string Surname;
         protected string Address;
         protected string City;
-        protected string Email;
+        private string Email;
         protected string Password;
 
-        
-       
-
-        public Customer(string firstName, string lastName, string mail){
+         public Customer(string firstName, string lastName, string mail){
                 
                 this.FirstName = firstName;
                 this.LastName = lastName;
@@ -42,4 +39,33 @@ namespace ECommerce{
             Console.WriteLine("Please,compile our forum to sig in in this website");
         }
     }
+
+    class OrderHeader{
+        private int id; //Consider to prefer long for much id......
+
+        private string date;
+        private long orderNumber;
+        private string userId;
+
+
+        public OrderHeader(int Id ,long OrderNumber,string Date ){
+                this.id = Id;
+                this.orderNumber = OrderNumber;
+                this.date = Date;
+        }
+        public void CreateOrder(){
+            System.Console.WriteLine($"Yor order has been created.....Id {this.id} order number : {this.orderNumber} at {this.date}");
+        }
+
+        private void Cancel(){
+            System.Console.WriteLine( );
+        }
+
+        private void list(){
+
+        }
+
+
+    }
+
 }
