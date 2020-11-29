@@ -50,18 +50,18 @@ namespace ECommerce{
 
         public OrderHeader(int Id ,long OrderNumber,string Date ){
                 this.id = Id;
-                this.orderNumber = OrderNumber;
+                this.orderNumber = OrderNumber;  
                 this.date = Date;
         }
         public void CreateOrder(){
-            System.Console.WriteLine($"Yor order has been created.....Id {this.id} order number : {this.orderNumber} at {this.date}");
+            System.Console.WriteLine($"Yor order has been created....: Id {this.id} order_number : {this.orderNumber} at {this.date}");
         }
 
-        private void Cancel(){
-            System.Console.WriteLine( );
+        public void Cancel(){
+            System.Console.WriteLine();
         }
 
-        private void list(){
+        public void list(){
 
         }
 

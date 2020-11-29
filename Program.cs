@@ -33,11 +33,11 @@ namespace CSharpExercises
 
             firstCustomer.Login();
 
-            DateTime today = new DateTime(2020,11,29,10,30,50); 
+            DateTime now = DateTime.Now; //Instance of object Datatime;
 
-            OrderHeader one = new OrderHeader(77,123456,today.ToString());
+            OrderHeader one = new OrderHeader(77,123456,now.ToString()); // Create a new istance of OrderHeader class
 
-            one.CreateOrder();
+            one.CreateOrder(); //Call method
 
         }
     }
