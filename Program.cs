@@ -39,6 +39,13 @@ namespace CSharpExercises
 
             one.CreateOrder(); //Call method
 
+        //Create an Istance of class Article
+
+        Article article1 = new Article (23);
+
+        article1.Destroy();
+        article1.Retrieve();
+        
         }
     }
 }

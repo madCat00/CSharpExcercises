@@ -65,7 +65,38 @@ namespace ECommerce{
 
         }
 
-
+        
     }
+ class Article{
+     private int id;
+     private string descrizione;
+     private int prezzo;
+     private int giacenza;
+     public int vat;
+
+     public int destroy;
+     
+
+ public Article(int Id){
+     this.id = Id;
+ }
+
+ public void Crud(){
+     Console.WriteLine($"{this.id}");
+ }
+ public void List(){
+     Console.WriteLine($"");
+ }
+
+ public void Destroy(){
+    
+     Console.WriteLine($"yor id has been eliminate {this.id}");
+ }
+
+ public void Retrieve(){
+
+        Console.WriteLine($"You id has been restore {this.id}");
+ }
+ }
 
 }
