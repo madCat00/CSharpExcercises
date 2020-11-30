@@ -3,10 +3,8 @@ using System;
 namespace ECommerce{
     class Customer{
         protected int Id;
-        protected string Name;
         private string FirstName;
         private string  LastName;
-        protected string Surname;
         protected string Address;
         protected string City;
         private string Email;
@@ -41,20 +39,21 @@ namespace ECommerce{
     }
 
     class OrderHeader{
-        private int id; //Consider to prefer long for much id......
+        private int Id; //Consider to prefer long for much id......
 
-        private string date;
-        private long orderNumber;
-        private string userId;
+        public DateTime Date{get;set;}
+        public int OrderNumber{get;}
+        private int UserId;
 
 
-        public OrderHeader(int Id ,long OrderNumber,string Date ){
-                this.id = Id;
-                this.orderNumber = OrderNumber;  
-                this.date = Date;
+        public OrderHeader(int userid ,int orderNumber,DateTime date ){
+                this.UserId = userid;
+                this.OrderNumber = orderNumber;  
+                this.Date = DateTime.Now;
+                
         }
         public void CreateOrder(){
-            System.Console.WriteLine($"Yor order has been created....: Id {this.id} order_number : {this.orderNumber} at {this.date}");
+            System.Console.WriteLine($"Yor order has been created....: Id {this.Id} order_number : {this.OrderNumber} at {this.Date}");
         }
 
         public void Cancel(){
@@ -68,21 +67,32 @@ namespace ECommerce{
         
     }
  class Article{
-     private int id;
-     private string descrizione;
-     private int prezzo;
-     private int giacenza;
-     public int vat;
+     private int Id{get;}
+     private string Description{get;set;}
+     public double Price{get;set;}
+     public int Stock{get;set;}
+     public int Invoice{get;}
 
      public int destroy;
      
 
- public Article(int Id){
-     this.id = Id;
+ public Article(int id, double price){
+     Id = id;
+     Price = price;
  }
 
- public void Crud(){
-     Console.WriteLine($"{this.id}");
+ public void Create(){
+     Console.WriteLine($"{this.Id}");
+ }
+
+ public void Read(){
+     Console.WriteLine();
+ }
+ public void Update(){
+     Console.WriteLine();
+ }
+ public void Delete(){
+
  }
  public void List(){
      Console.WriteLine($"");
@@ -90,12 +100,12 @@ namespace ECommerce{
 
  public void Destroy(){
     
-     Console.WriteLine($"yor id has been eliminate {this.id}");
+     Console.WriteLine($"yor id has been eliminate {this.Id} {this.Price}");
  }
 
  public void Retrieve(){
 
-        Console.WriteLine($"You id has been restore {this.id}");
+        Console.WriteLine($"You id has been restore {this.Id} {this.Price}");
  }
  }
 
