@@ -9,12 +9,20 @@ namespace ECommerce{
         protected string City;
         private string Email;
         protected string Password;
-
+        public int Age{set;get;}
          public Customer(string firstName, string lastName, string mail){
                 
                 this.FirstName = firstName;
                 this.LastName = lastName;
                 this.Email = mail;
+        }
+
+        public void CheckAge(){
+            if(Age<18){
+                Console.WriteLine("You might not be able to buy certain articles");
+            }else{
+                Console.WriteLine("Well done you can buy any article");
+            }
         }
 
         public void Login(){
@@ -53,6 +61,7 @@ namespace ECommerce{
                 
         }
         public void CreateOrder(){
+
             System.Console.WriteLine($"Yor order has been created....: Id {this.Id} order_number : {this.OrderNumber} at {this.Date}");
         }
 
@@ -66,7 +75,7 @@ namespace ECommerce{
 
         
     }
- class Article{
+ class Article {
      private int Id{get;}
      private string Description{get;set;}
      public double Price{get;set;}
@@ -74,15 +83,21 @@ namespace ECommerce{
      public int Invoice{get;}
 
      public int destroy;
+     public int Age;
      
 
- public Article(int id, double price){
+ public Article(int id, double price,int age){
      Id = id;
      Price = price;
+     Age = age;
  }
 
  public void Create(){
-     Console.WriteLine($"{this.Id}");
+     if (Age< 18){
+     Console.WriteLine($"You're not be able to make order");
+     }else{
+         Console.WriteLine($"well done...this is you article id {this.Id} ${this.Price}");
+     }
  }
 
  public void Read(){

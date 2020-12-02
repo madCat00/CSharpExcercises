@@ -39,17 +39,23 @@ namespace CSharpExercises
 
         //Create an Istance of class Article
 
-        Article article1 = new Article(23,22.50);
+        Article article1 = new Article(23,22.50,22);
 
         article1.Destroy();
         article1.Retrieve();
 
-        Article articles = new Article(23,22.55); //New Istance of Articles and set the value
+        Article articles = new Article(23,22.55,22); //New Istance of Articles and set the value
         
         articles.Price = 55.44; //Access to field and set a new value, this became a property
 
         Console.WriteLine("The new price is {0}",articles.Price);//Access to a new price
         Console.WriteLine("The invoice is {0}",article1.Invoice);//Get the value of invoice "0"
+
+        Customer Antonio = new Customer ("Antoni","Rossi","@gmail.com");
+        var age = Antonio.Age = 25;
+        Antonio.CheckAge();
+        Article wine = new Article(23,23.44,age);
+        wine.Create();
         
         }
     }
