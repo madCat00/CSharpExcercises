@@ -52,7 +52,9 @@ namespace CSharpExercises
         Console.WriteLine("The invoice is {0}",article1.Invoice);//Get the value of invoice "0"
 
         Customer Antonio = new Customer ("Antoni","Rossi","@gmail.com");
-        var age = Antonio.Age = 22;
+        
+        Antonio.Age =22;
+        var age = Antonio.Age;
         Antonio.CheckAge();
         Article wine = new Article(23,23.44,age);
         wine.Create();
