@@ -57,8 +57,12 @@ namespace ECommerce{
         }
     }
 
-class UserCustomer{
 
+class Customers {
+    public void UserExtract(string list){
+        Console.WriteLine($"Hi! this is the name of a user: {list}");
+        
+    }
 }
     class OrderHeader{
         private int Id; //Consider to prefer long for much id......

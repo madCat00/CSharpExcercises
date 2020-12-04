@@ -57,8 +57,24 @@ namespace CSharpExercises
         Antonio.Age = 10; //Get the age and checked...
         article1.Verify(Antonio.Age); //The class Article print a message 
 
-      }
-    }
+        //Create a list of users and extract to Customers class
+
+        var userlist = new List<string>{"Jhonny","Ramon","Lucas","Emy","Rose"}; //Create a list......
+        
+        //P.S: Youcan use add,remove and other method to add content at list
+
+        //Create a new istance of Customers class...
+        var getlist = new Customers();
+
+        //Cycle to extract the name in the class object;
+        foreach (var name in userlist)
+        {
+            getlist.UserExtract(name.ToString()); //Use the method in the class Customers
+            
+        }
+            
+        }
+    }       
 }
 
 
