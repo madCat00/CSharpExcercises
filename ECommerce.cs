@@ -9,22 +9,33 @@ namespace ECommerce{
         protected string City;
         private string Email;
         protected string Password;
-        public int Age{set;get;}
-         public Customer(string firstName, string lastName, string mail){
+        private int _age;
+         public Customer(string firstName, string lastName, string mail){ //costructor
                 
                 this.FirstName = firstName;
                 this.LastName = lastName;
                 this.Email = mail;
         }
 
-        public void CheckAge(){
-            if(Age<18){
-                Console.WriteLine("You might not be able to buy certain articles");
-            }else{
-                Console.WriteLine("Well done you can buy any article");
-            }
-        }
+   public int Age{
 
+       get => _age;
+       set{
+            _age = value;
+            CheckAge();
+            
+          }
+    }
+
+   public void CheckAge(){
+
+       if(Age < 18){
+           Console.WriteLine("You're not be able to buy any article");
+       }else 
+       {
+           Console.WriteLine("Yoo're able to buy any article");
+       }
+   }
         public void Login(){
             Console.WriteLine( $"Hi,{this.FirstName} {this.LastName} ,your mail: {this.Email}. Well done you 're loggin in.");
         }
@@ -46,6 +57,9 @@ namespace ECommerce{
         }
     }
 
+class UserCustomer{
+
+}
     class OrderHeader{
         private int Id; //Consider to prefer long for much id......
 
@@ -83,22 +97,31 @@ namespace ECommerce{
      public int Invoice{get;}
 
      public int destroy;
-     public int Age;
+     
      
 
- public Article(int id, double price,int age){
-     Id = id;
+ public Article(string description,int stock, double price){
+     Stock = stock;
      Price = price;
-     Age = age;
+     Description = description;
  }
 
- public void Create(){
-     if (Age< 18){
-     Console.WriteLine($"You're not be able to make order");
-     }else{
-         Console.WriteLine($"well done...this is you article id {this.Id} ${this.Price}");
-     }
- }
+public void Articles(){
+    Console.WriteLine($"Well done! your article is {this.Description},{this.Price}");
+}
+
+
+public void Verify(int age){       
+      if(age<18)
+    {
+       Console.WriteLine("You're not be able to buy any article!!This message was sent by Class Article!");
+    }else                                                                                                                   
+    {
+        Console.WriteLine("You're able to add any article to cart!!!This message was sent by Class Article!");
+    }                                   
+    
+}
+
 
  public void Read(){
      Console.WriteLine();
@@ -109,10 +132,6 @@ namespace ECommerce{
  public void Delete(){
 
  }
- public void List(){
-     Console.WriteLine($"");
- }
-
  public void Destroy(){
     
      Console.WriteLine($"yor id has been eliminate {this.Id} {this.Price}");

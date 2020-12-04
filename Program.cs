@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ECommerce;
 
 
@@ -39,27 +40,24 @@ namespace CSharpExercises
 
         //Create an Istance of class Article
 
-        Article article1 = new Article(23,22.50,22);
+        Article article1 = new Article("t-shirt",23,22.50);
 
         article1.Destroy();
         article1.Retrieve();
 
-        Article articles = new Article(23,22.55,22); //New Istance of Articles and set the value
+        Article articles = new Article("Jeans",23,22.55); //New Istance of Articles and set the value
         
         articles.Price = 55.44; //Access to field and set a new value, this became a property
 
         Console.WriteLine("The new price is {0}",articles.Price);//Access to a new price
         Console.WriteLine("The invoice is {0}",article1.Invoice);//Get the value of invoice "0"
 
-        Customer Antonio = new Customer ("Antoni","Rossi","@gmail.com");
+        Customer Antonio = new Customer ("Antonio","Rossi","@gmail.com");
         
-        Antonio.Age =22;
-        var age = Antonio.Age;
-        Antonio.CheckAge();
-        Article wine = new Article(23,23.44,age);
-        wine.Create();
-        
-        }
+        Antonio.Age = 10; //Get the age and checked...
+        article1.Verify(Antonio.Age); //The class Article print a message 
+
+      }
     }
 }
 
