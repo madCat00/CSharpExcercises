@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ECommerce{
     class Customer{
@@ -29,9 +30,9 @@ namespace ECommerce{
 
    public void CheckAge(){
 
-       if(Age < 18){
+         if (Age < 18){
            Console.WriteLine("You're not be able to buy any article");
-       }else 
+       } else 
        {
            Console.WriteLine("Yoo're able to buy any article");
        }
@@ -59,10 +60,16 @@ namespace ECommerce{
 
 
 class Customers {
-    public void UserExtract(string list){
-        Console.WriteLine($"Hi! this is the name of a user: {list}");
-        
-    }
+    public void UsersExtract(List<string> userlist){
+
+          foreach (var name in userlist)
+
+            {
+                Console.WriteLine($"Hi! this is the name of a user(s): {name}");
+            }
+          
+ }
+   
 }
     class OrderHeader{
         private int Id; //Consider to prefer long for much id......

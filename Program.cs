@@ -14,17 +14,22 @@ namespace CSharpExercises
             string toUpper = name.ToUpper();                                                //First Excercise
             System.Console.WriteLine( "Il nome inserito in maiuscolo è" +" "+ toUpper);
             */
-            /*
+            
+            /*    --------------------  Send  Args[] roa program ---------------------------
+           
             if(args.Length > 0 ){  
                 var name = args[0];
                 var toUpper = name.ToUpper();
             Console.WriteLine($"{toUpper}");                                        //Second Excercise
-            }   
-            else{
+            }else
+            {
 
                 Console.WriteLine("Please, insert a param after cmd dotnet run!!!");
             }
             */
+
+            /*-----------------------------Create a HEADHorder Class -------------------------------------------- */
+
              var firstCustomer = new Customer("Francesco","Rossi","Hotmail.com");           //Third Excercise;
 
             //Another way to call class Customer, and initialize an istance.
@@ -38,7 +43,7 @@ namespace CSharpExercises
 
             one.CreateOrder(); //Call method
 
-        //Create an Istance of class Article
+        /* ----------------------------Create an Istance of class Article ----------------------------------------*/
 
         Article article1 = new Article("t-shirt",23,22.50);
 
@@ -52,27 +57,26 @@ namespace CSharpExercises
         Console.WriteLine("The new price is {0}",articles.Price);//Access to a new price
         Console.WriteLine("The invoice is {0}",article1.Invoice);//Get the value of invoice "0"
 
+        /* ---------------------Comunication between class ---------------------------------------------*/
+
         Customer Antonio = new Customer ("Antonio","Rossi","@gmail.com");
         
         Antonio.Age = 10; //Get the age and checked...
         article1.Verify(Antonio.Age); //The class Article print a message 
 
-        //Create a list of users and extract to Customers class
+        /* ----------------Create a list of users and extract them to Customers class-------------- */
 
-        var userlist = new List<string>{"Jhonny","Ramon","Lucas","Emy","Rose"}; //Create a list......
+            var userlist = new List<string>{"Jhonny","Ramon","Lucas","Emy","Rose"}; //Create a list......
         
-        //P.S: Youcan use add,remove and other method to add content at list
+            //Create a new istance of Customers class...
+            var extract = new Customers();
 
-        //Create a new istance of Customers class...
-        var getlist = new Customers();
+            // You can add o remove users before the extract method;
+            userlist.Add("Gilbert");  
+            userlist.Remove("Ramon");
+                
+            extract.UsersExtract(userlist);
 
-        //Cycle to extract the name in the class object;
-        foreach (var name in userlist)
-        {
-            getlist.UserExtract(name.ToString()); //Use the method in the class Customers
-            
-        }
-            
         }
     }       
 }
