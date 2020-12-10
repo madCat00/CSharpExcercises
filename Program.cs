@@ -66,16 +66,10 @@ namespace CSharpExercises
 
         /* ----------------Create a list of users and extract them to Customers class-------------- */
 
-            var userlist = new List<string>{"Jhonny","Ramon","Lucas","Emy","Rose"}; //Create a list......
-        
-            //Create a new istance of Customers class...
-            var extract = new Customers();
+            // Create a new users and pass it to list 
 
-            // You can add o remove users before the extract method;
-            userlist.Add("Gilbert");  
-            userlist.Remove("Ramon");
-                
-            extract.UsersExtract(userlist);
+            Customer Rose = new Customer("Rose","hamilton","Roseham@gmail.com");
+            
 
         }
     }       

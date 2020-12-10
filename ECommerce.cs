@@ -60,6 +60,16 @@ namespace ECommerce{
 
 
 class Customers {
+
+    private List<Customer> Customerlist;
+
+    public Customers(){
+        this.Customerlist = new List<Customer>();
+    }
+
+    public void addCustomer(Customer customer){
+        this.Customerlist.Add(customer);
+    }
     public void UsersExtract(List<string> userlist){
 
           foreach (var name in userlist)
@@ -153,5 +163,87 @@ public void Verify(int age){
         Console.WriteLine($"You id has been restore {this.Id} {this.Price}");
  }
  }
+
+class Cart{
+    private int _Id;
+    private int _IdArticle;
+    private int _IdUsers;
+    private int _Quantity;
+
+    public void buy(Articles articles){
+        
+    }
+    public void EmptyCart(){
+
+    }
+    public void ListCart(){
+
+    }
+}
+
+class Articles {
+    private int _Id;
+    private string _Description;
+    private double _Price;
+    private int _Stock;
+    private List<Articles> ArticlesList;
+    public int Vat;
+
+  
+
+    public Articles(int id, string description, double price){
+        _Id = id;
+        _Description = description;
+        _Price = price;
+
+    }
+
+public void CreateArticleList(){
+    this.ArticlesList = new List<Articles>();
+}
+
+    public void CreateArticles(){
+                
+                
+    }
+    public void ReadArticles(){
+
+    }
+    public void UpdateArticle(){
+
+    }
+
+    public void Delete(){
+
+    }
+    public void List(){
+
+    }
+}
+
+class OrderDetail{
+    private int _Id;
+    public int IdOrder;
+    public int IdArticle;
+    private double Price;
+    private int Quantity;
+
+}
+
+class Admin{
+    private string _Administrator;
+    public void loginAdmin(){
+
+    }
+    public void OrderManagement(){
+
+    }
+    public void ArticleManagement(){
+
+    }
+    public void CustomerManagement(){
+        
+    }
+}
 
 }
