@@ -28,7 +28,7 @@ namespace CSharpExercises
             }
             */
 
-            /*-----------------------------Create a HEADHorder Class -------------------------------------------- */
+            /*-----------------------------Create a HeadHorder Class -------------------------------------------- */
 
              var firstCustomer = new Customer("Francesco","Rossi","Hotmail.com");           //Third Excercise;
 
@@ -45,24 +45,24 @@ namespace CSharpExercises
 
         /* ----------------------------Create an Istance of class Article ----------------------------------------*/
 
-        Article article1 = new Article("t-shirt",23,22.50);
+        Article article12 = new Article("t-shirt",23,22.50);
 
-        article1.Destroy();
-        article1.Retrieve();
+        article12.Destroy();
+        article12.Retrieve();
 
         Article articles = new Article("Jeans",23,22.55); //New Istance of Articles and set the value
         
         articles.Price = 55.44; //Access to field and set a new value, this became a property
 
         Console.WriteLine("The new price is {0}",articles.Price);//Access to a new price
-        Console.WriteLine("The invoice is {0}",article1.Invoice);//Get the value of invoice "0"
+        Console.WriteLine("The invoice is {0}",article12.Invoice);//Get the value of invoice "0"
 
         /* ---------------------Comunication between class ---------------------------------------------*/
 
         Customer Antonio = new Customer ("Antonio","Rossi","@gmail.com");
         
         Antonio.Age = 10; //Get the age and checked...
-        article1.Verify(Antonio.Age); //The class Article print a message 
+        article12.Verify(Antonio.Age); //The class Article print a message 
 
         /* ----------------Create a list of users and extract them to Customers class-------------- */
 
@@ -70,7 +70,24 @@ namespace CSharpExercises
 
             Customer Rose = new Customer("Rose","hamilton","Roseham@gmail.com");
             
+            Customers add = new Customers(); //Create istence for method add
+            
+            add.AddCustomer(Rose); //add users to list of Customer
 
+
+        /* --------------Create new method to search and add articles to cart---------------------------- */
+
+                // Create a new articles and customer
+
+                Customer Mark = new Customer("Mark","Bay","yahoo.com"); //Create a new customer 
+
+                Articles socks = new Articles("socks",22.30,30);
+
+                Mark.AddArticles(socks);
+              
+
+
+                
         }
     }       
 }

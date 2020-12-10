@@ -10,6 +10,7 @@ namespace ECommerce{
         protected string City;
         private string Email;
         protected string Password;
+        private List<Articles> ArticlesList;
         private int _age;
          public Customer(string firstName, string lastName, string mail){ //costructor
                 
@@ -37,6 +38,18 @@ namespace ECommerce{
            Console.WriteLine("Yoo're able to buy any article");
        }
    }
+
+      public void AddArticles(Articles articles){
+
+        this.ArticlesList = new List<Articles>();
+
+        ArticlesList.Add(articles);
+
+    }
+
+    public void Search(){
+        
+    }
         public void Login(){
             Console.WriteLine( $"Hi,{this.FirstName} {this.LastName} ,your mail: {this.Email}. Well done you 're loggin in.");
         }
@@ -61,24 +74,20 @@ namespace ECommerce{
 
 class Customers {
 
-    private List<Customer> Customerlist;
+    private List<Customer> _Customerlist;
 
     public Customers(){
-        this.Customerlist = new List<Customer>();
+        this._Customerlist = new List<Customer>();
     }
 
-    public void addCustomer(Customer customer){
-        this.Customerlist.Add(customer);
+    public void AddCustomer(Customer customer){
+
+        this._Customerlist.Add(customer);
     }
-    public void UsersExtract(List<string> userlist){
 
-          foreach (var name in userlist)
-
-            {
-                Console.WriteLine($"Hi! this is the name of a user(s): {name}");
-            }
-          
- }
+    public void RemoveCustomer(Customer customer){
+        this._Customerlist.Remove(customer);
+    }
    
 }
     class OrderHeader{
@@ -190,13 +199,22 @@ class Articles {
     public int Vat;
 
   
-
-    public Articles(int id, string description, double price){
-        _Id = id;
-        _Description = description;
+public string Description{
+    set {
+            _Description = value;
+    }
+}
+    public Articles( string description,double price,int stock){
+        _Stock = stock;
         _Price = price;
+        _Description = description;
 
     }
+
+    public void Search(){
+        
+    }
+    
 
 public void CreateArticleList(){
     this.ArticlesList = new List<Articles>();
