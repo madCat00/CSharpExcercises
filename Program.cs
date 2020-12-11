@@ -90,7 +90,7 @@ namespace CSharpExercises
               
         /*-----------------Create a list of city and serach it on a list of city --------------------------*/
 
-                ExLinq.ListOfCity.Cities("Firenze");
+                ListOfCity.Cities("Firenze");
 
                 
 

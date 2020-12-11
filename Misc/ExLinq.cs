@@ -15,7 +15,7 @@ namespace ExLinq{
                 city.Add("Firenze");
                 city.Add("Siena");
 
-              var query =  from Cities in city
+              var query =   from Cities in city
                             where Cities == NameOfCity
                             select NameOfCity;
 
@@ -23,9 +23,8 @@ namespace ExLinq{
                 foreach (var item in query)
                 {
                    
-                     Console.WriteLine($"The value that you've aerched is: {item}");
+                     Console.WriteLine($"The value that you've searched is: {item}");
                 
-                    
                 }
 
 
