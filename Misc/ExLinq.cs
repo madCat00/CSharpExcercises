@@ -15,10 +15,11 @@ namespace ExLinq{
                 city.Add("Firenze");
                 city.Add("Siena");
 
-              var query =   from Cities in city
-                            where Cities == NameOfCity
-                            select NameOfCity;
+               IEnumerable<string> query =from Cities in city
+                                          where Cities == NameOfCity
+                                          select NameOfCity;
 
+                
                 
                 foreach (var item in query)
                 {

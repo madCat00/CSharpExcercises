@@ -90,7 +90,9 @@ namespace CSharpExercises
               
         /*-----------------Create a list of city and serach it on a list of city --------------------------*/
 
-                ListOfCity.Cities("Firenze");
+                Console.WriteLine("Please insert a name of a city");
+                var cities = Console.ReadLine();
+                ListOfCity.Cities(cities);
 
                 
 
