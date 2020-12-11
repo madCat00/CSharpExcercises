@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ECommerce;
+using ExLinq;
 
 
 namespace CSharpExercises
@@ -83,8 +84,15 @@ namespace CSharpExercises
 
                 Articles socks = new Articles("socks",22.30,30);
 
+                // Add some articles to a list 
+                
                 Mark.AddArticles(socks);
               
+        /*-----------------Create a list of city and serach it on a list of city --------------------------*/
+
+                ExLinq.ListOfCity.Cities("Firenze");
+
+                
 
 
                 
