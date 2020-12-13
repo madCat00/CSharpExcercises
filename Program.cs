@@ -89,16 +89,21 @@ namespace CSharpExercises
                 Mark.AddArticles(socks);
               
         /*-----------------Create a list of city and serach it on a list of city --------------------------*/
-
+                    /*
                 Console.WriteLine("Please insert a name of a city");
                 var cities = Console.ReadLine();
                 ListOfCity.Cities(cities);
-
+            */
+        /* ----------------------- Create a list of peaks from a various string -------------------------*/
                 
+            string namesOfPeaks = " Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano          ";
+             
+            var findValues = new string []{" Monte Falterona"}; //Please, respect the space from namesOfPeaks in the search value, or return nothing!!
 
-
-                
-        }
+            Peaks.SearchMountains(namesOfPeaks,findValues);
+            
+             
+            }
     }       
 }
 
