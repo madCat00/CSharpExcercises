@@ -36,7 +36,7 @@ namespace ExLinq{
          
          public static void SearchMountains(string mountains, string[] search){
              
-           string trimmed = mountains.Trim(' '); //Delete blank spaces from start and end
+           string trimmed = mountains.Trim(); //Delete blank spaces from start and end
            char [] values = new char[]{';',','};
            string[] splitted = trimmed.Split(values,StringSplitOptions.RemoveEmptyEntries); //Split string and remove blank lines
 

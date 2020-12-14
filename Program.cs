@@ -89,10 +89,10 @@ namespace CSharpExercises
                 Mark.AddArticles(socks);
               
         /*-----------------Create a list of city and serach it on a list of city --------------------------*/
-                    /*
-                Console.WriteLine("Please insert a name of a city");
-                var cities = Console.ReadLine();
-                ListOfCity.Cities(cities);
+           /*
+            *Console.WriteLine("Please insert a name of a city");
+            *var cities = Console.ReadLine();
+            *ListOfCity.Cities(cities);
             */
         /* ----------------------- Create a list of peaks from a various string -------------------------*/
                 
