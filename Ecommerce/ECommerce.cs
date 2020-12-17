@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ECommerce{
     class Customer{
@@ -121,7 +122,7 @@ class Customers {
     }
  class Article {
      private int Id{get;}
-     private string Description{get;set;}
+     public string Description{get;set;}
      public double Price{get;set;}
      public int Stock{get;set;}
      public int Invoice{get;}
@@ -136,7 +137,7 @@ class Customers {
      Description = description;
  }
 
-public void Articles(){
+public void Items(){
     Console.WriteLine($"Well done! your article is {this.Description},{this.Price}");
 }
 
@@ -192,34 +193,34 @@ class Cart{
 
 class Articles {
     private int _Id;
-    private string _Description;
+    public string _Description;
     private double _Price;
-    private int _Stock;
-    private List<Articles> ArticlesList;
+    public int  _Stock;
+    private List<Article> ListOfItems;
     public int Vat;
 
-  
-public string Description{
-    set {
-            _Description = value;
-    }
+
+ 
+public Articles(){
+
+    ListOfItems = new List<Article>();
 }
-    public Articles( string description,double price,int stock){
-        _Stock = stock;
-        _Price = price;
-        _Description = description;
-
-    }
-
-    public void Search(){
+public void addToListOfArticles(Article article){
         
-    }
-    
+    ListOfItems.Add(article);
 
-public void CreateArticleList(){
-    this.ArticlesList = new List<Articles>();
 }
 
+public int Count(){
+    return ListOfItems.Count;
+}
+/*
+    public List<Article> Search(string description){
+        
+          
+
+    }
+*/
     public void CreateArticles(){
                 
                 
@@ -235,6 +236,11 @@ public void CreateArticleList(){
 
     }
     public void List(){
+       
+        foreach (var items in this.ListOfItems)
+        {
+            Console.WriteLine("{0}",items.Description);
+        }
 
     }
 }
