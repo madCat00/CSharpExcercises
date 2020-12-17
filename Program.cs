@@ -149,15 +149,15 @@ namespace CSharpExercises
            Article gloves = new Article ("blue gloves",33,56.7);
            Article socks = new Article ("Green socks",43,44.76);
 
-           Articles CreateList = new Articles(); //Set a method to create a list of article
+           Articles CreateList = new Articles(); //Set an istance to create a list of article
 
            CreateList.addToListOfArticles(hat);
            CreateList.addToListOfArticles(gloves);   //Add article to articles
            CreateList.addToListOfArticles(socks);
            
-           Articles print = new Articles();
            
-           print.List();  //Add a method to diplay all articles add
+
+           CreateList.List();  //Add a method to diplay all articles add
            
             /*--------------------- Milestone 2 -----------------------------*/
 
