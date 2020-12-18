@@ -155,8 +155,6 @@ namespace CSharpExercises
            CreateList.addToListOfArticles(gloves);   //Add article to articles
            CreateList.addToListOfArticles(socks);
            
-           
-
            CreateList.List();  //Add a method to diplay all articles add
            
             /*--------------------- Milestone 2 -----------------------------*/
@@ -165,9 +163,15 @@ namespace CSharpExercises
              *we can add the searched article to the Cart
             */
            
+            Console.WriteLine(CreateList.search("Green socks").Price);  //search an article and print his price 
 
+            //Add article to cart
+
+            var myart = CreateList.search("green socks");
+
+            Cart addtoCart = new Cart(myart,Mark,78); //Add search article to cart
            
-             
+
         }
     }       
 }

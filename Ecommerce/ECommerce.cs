@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ECommerce{
     class Customer{
-        protected int Id;
+        public int Id;
         private string FirstName;
         private string  LastName;
         protected string Address;
@@ -121,7 +121,7 @@ class Customers {
         
     }
  class Article {
-     private int Id{get;}
+     public int Id{get;}
      public string Description{get;set;}
      public double Price{get;set;}
      public int Stock{get;set;}
@@ -176,9 +176,24 @@ public void Verify(int age){
 
 class Cart{
     private int _Id;
-    private int _IdArticle;
-    private int _IdUsers;
-    private int _Quantity;
+    public Article IdArticle;
+    public int _IdUsers;
+    public int _Quantity;
+    public static List<Cart> ListCart = new List<Cart>();
+
+    public Cart(Article article, Customer users,int quantity){
+        
+        this.IdArticle = article;
+        this._IdUsers = users.Id;
+        this._Quantity = quantity;
+    }
+
+
+
+    public void addtoList(Cart cart){
+            ListCart.Add(cart);
+            Console.WriteLine(ListCart.Count);
+    }
 
     public void buy(Articles articles){
         
@@ -186,15 +201,20 @@ class Cart{
     public void EmptyCart(){
 
     }
-    public void ListCart(){
+    public void CartList(){
 
     }
+
+    
+
+
+
 }
 
 class Articles {
     private int _Id;
     public string _Description;
-    private double _Price;
+    public double Price;
     public int  _Stock;
     private List<Article> ListOfItems;
     public int Vat;
@@ -211,9 +231,19 @@ public void addToListOfArticles(Article article){
 
 }
 
-public int Count(){
-    return ListOfItems.Count;
-}
+public Article search (string description){
+
+ foreach (Article items in ListOfItems)
+ {
+     if(items.Description == description){
+         return items;
+     }
+
+     }
+     return null;
+ }
+
+
 /*
     public List<Article> Search(string description){
         
