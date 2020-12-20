@@ -14,7 +14,7 @@ namespace ECommerce{
         protected string Password;
         private List<Articles> ArticlesList;
         private int _age;
-         public Customer(string firstName, string lastName, string mail){ //costructor
+        public Customer(string firstName, string lastName, string mail){ //costructor
                 
                 this.FirstName = firstName;
                 this.LastName = lastName;
@@ -178,22 +178,30 @@ public void Verify(int age){
 class Cart{
     private int _Id;
     public Article IdArticle;
-    public int _IdUsers;
-    public int _Quantity;
+    public int IdUsers;
+    public int Quantity;
     public static List<Cart> ListCart = new List<Cart>();
-
+    public  List<Article> AllItems = new List<Article>();
+  
     public Cart(Article article, Customer users,int quantity){
         
         this.IdArticle = article;
-        this._IdUsers = users.Id;
-        this._Quantity = quantity;
+        this.IdUsers = users.Id;
+        this.Quantity = quantity;
     }
 
+    public void addMultiplyArticle(Article article){
 
+        AllItems.Add(article);
+        
+    }
 
-    public void addtoList(Cart cart){
-            ListCart.Add(cart);
-            Console.WriteLine(ListCart.Count);
+    public  void Total(){
+
+        var total= AllItems.Aggregate(0.00,(acc,val)=>acc +val.Price);
+
+        Console.WriteLine("Prices {0}",total);
+       
     }
 
     public void buy(Articles articles){
@@ -303,6 +311,7 @@ class Admin{
 class SaveFile{
 
     private string _path;
+    private  List<Article> AddToList = new List<Article>();
 
     public string Path{
 
@@ -325,17 +334,34 @@ class SaveFile{
                 }
         }
 
-        public static void WriteToFile(string FilePath,Article article){
+    public  void  WriteToFile(string filePath,Article article){
+
+        string description = article.Description;
+        string price = Convert.ToString(article.Price);
+        string stock = Convert.ToString(article.Stock);
+        var concat = String.Concat(description," ",price," ",stock);
         
-         string detail = article.Description;
-         string price = Convert.ToString(article.Price);
-         string stock = Convert.ToString(article.Stock);
-         string concat = string.Concat(detail," ",price," ",stock);
+        IEnumerable<string> addToFile = new string[]{concat};
+            
+        File.WriteAllLines(filePath,addToFile);
+     
 
-         File.WriteAllTextAsync(FilePath,concat);
+    }
 
+public void SearchOnFiles(string filePath,string description){
+
+    var lines = File.ReadAllLines(filePath);
+    
+    var query = from line in lines
+                where line == description
+                select description;
+    
+        foreach (var line in query)
+        {
+            Console.WriteLine(line);
         }
 
+}
 }
 
 }

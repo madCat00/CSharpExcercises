@@ -160,38 +160,52 @@ namespace CSharpExercises
 
            //Create a logic to write each article in a file on the filesystem
             
-            SaveFile Path = new SaveFile();
+            SaveFile way = new SaveFile();
 
              /* Set the location on harddrive, where do you want create your file.
               * If the file exixt, the progam report the hour and date of creation.
               * N.B: The path can be an absolute or relative address.
-             */
+              */
 
-           Path.Path = "ListOfArticle.csv";
-           var pathway = Path.Path;
+           way.Path = "ListOfArticle.csv"; //Set the path 
 
-            SaveFile.CreateNewFile(); //Create method, for create a csv file, container of my article
+           var pathway = way.Path;
 
-            SaveFile.WriteToFile(pathway,hat);
-          
-          
+          SaveFile.CreateNewFile(); //Create method, for create a csv file, container of my article
         
+          //way.WriteToFile(pathway,socks); //Write an article to a csv file
            
+
             /*--------------------- Milestone 2 -----------------------------*/
 
             /*we can search for an article by its description, and we can print its price
              *we can add the searched article to the Cart
-            */
+             */
            
             Console.WriteLine(CreateList.search("Green socks").Price);  //search an article and print his price 
 
             //Add article
 
-            var myart = CreateList.search("green socks");
+            var myarticle = CreateList.search("green socks");
 
-            Cart addtoCart = new Cart(myart,Mark,78); //Add search article to cart
+            Cart addtoCart = new Cart(myarticle,Mark,78); //Add search article to cart
+
+            //Write a logic to search an article from a file
+
+            way.SearchOnFiles(pathway,"socks");
            
-           
+           /*--------------------- Milestone 3 -----------------------------*/
+
+           //We can add multiple article to the cart
+
+            Cart newCart1 = new Cart(hat,Mark,10);
+            Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
+
+            newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
+            newCart1.addMultiplyArticle(hat);
+
+            newCart1.Total();  //Calculate the total from the cart1
+         
             
         }
     }       
