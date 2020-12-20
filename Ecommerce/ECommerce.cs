@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace ECommerce{
     class Customer{
@@ -70,8 +71,8 @@ namespace ECommerce{
         public void SignIn(){
             Console.WriteLine("Please,compile our forum to sig in in this website");
         }
+    
     }
-
 
 class Customers {
 
@@ -299,5 +300,43 @@ class Admin{
         
     }
 }
+class SaveFile{
+
+    private string _path;
+
+    public string Path{
+
+        get => _path;
+
+        set {
+            _path = value;
+        }
+    }
+        public static void CreateNewFile(){
+
+            string filePath = "ListofArticle.csv";
+
+                if(!File.Exists(filePath))
+                {
+                    File.CreateText(filePath);
+                }else
+                {
+                   Console.WriteLine("The file was created on {0}",File.GetCreationTime(filePath));
+                }
+        }
+
+        public static void WriteToFile(string FilePath,Article article){
+        
+         string detail = article.Description;
+         string price = Convert.ToString(article.Price);
+         string stock = Convert.ToString(article.Stock);
+         string concat = string.Concat(detail," ",price," ",stock);
+
+         File.WriteAllTextAsync(FilePath,concat);
+
+        }
 
 }
+
+}
+

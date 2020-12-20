@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ECommerce;
 using ExLinq;
+using System.IO;
 
 
 namespace CSharpExercises
@@ -156,6 +157,25 @@ namespace CSharpExercises
            CreateList.addToListOfArticles(socks);
            
            CreateList.List();  //Add a method to diplay all articles add
+
+           //Create a logic to write each article in a file on the filesystem
+            
+            SaveFile Path = new SaveFile();
+
+             /* Set the location on harddrive, where do you want create your file.
+              * If the file exixt, the progam report the hour and date of creation.
+              * N.B: The path can be an absolute or relative address.
+             */
+
+           Path.Path = "ListOfArticle.csv";
+           var pathway = Path.Path;
+
+            SaveFile.CreateNewFile(); //Create method, for create a csv file, container of my article
+
+            SaveFile.WriteToFile(pathway,hat);
+          
+          
+        
            
             /*--------------------- Milestone 2 -----------------------------*/
 
@@ -171,7 +191,8 @@ namespace CSharpExercises
 
             Cart addtoCart = new Cart(myart,Mark,78); //Add search article to cart
            
-
+           
+            
         }
     }       
 }
