@@ -165,7 +165,7 @@ namespace CSharpExercises
            
             Console.WriteLine(CreateList.search("Green socks").Price);  //search an article and print his price 
 
-            //Add article to cart
+            //Add article
 
             var myart = CreateList.search("green socks");
 
