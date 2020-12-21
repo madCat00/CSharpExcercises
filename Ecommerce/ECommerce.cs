@@ -336,14 +336,8 @@ class SaveFile{
 
     public  void  WriteToFile(string filePath,Article article){
 
-        string description = article.Description;
-        string price = Convert.ToString(article.Price);
-        string stock = Convert.ToString(article.Stock);
-        var concat = String.Concat(description," ",price," ",stock);
-        
-        IEnumerable<string> addToFile = new string[]{concat};
-            
-        File.WriteAllLines(filePath,addToFile);
+      string date = $"Description:{article.Description} ,Stock:{Convert.ToString(article.Stock)} ,Price:{Convert.ToString(article.Price)}\n";
+      File.AppendAllText(filePath,date);
      
 
     }

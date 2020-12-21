@@ -173,7 +173,8 @@ namespace CSharpExercises
 
           SaveFile.CreateNewFile(); //Create method, for create a csv file, container of my article
         
-          //way.WriteToFile(pathway,socks); //Write an article to a csv file
+         way.WriteToFile(pathway,socks); //Write an article to a csv file
+        way.WriteToFile(pathway,gloves);
            
 
             /*--------------------- Milestone 2 -----------------------------*/
@@ -192,7 +193,7 @@ namespace CSharpExercises
 
             //Write a logic to search an article from a file
 
-            way.SearchOnFiles(pathway,"socks");
+           // way.SearchOnFiles(pathway,"socks");
            
            /*--------------------- Milestone 3 -----------------------------*/
 
