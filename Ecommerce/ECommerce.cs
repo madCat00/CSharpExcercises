@@ -321,40 +321,42 @@ class SaveFile{
             _path = value;
         }
     }
-        public static void CreateNewFile(){
+        
+    public static void CreateNewFile(string filePath){
 
-            string filePath = "ListofArticle.csv";
-
-                if(!File.Exists(filePath))
+                 if(!File.Exists(filePath))
                 {
                     File.CreateText(filePath);
                 }else
                 {
                    Console.WriteLine("The file was created on {0}",File.GetCreationTime(filePath));
-                }
-        }
-
+                }    
+    }
     public  void  WriteToFile(string filePath,Article article){
 
-      string date = $"Description:{article.Description} ,Stock:{Convert.ToString(article.Stock)} ,Price:{Convert.ToString(article.Price)}\n";
-      File.AppendAllText(filePath,date);
+      string data = $"Description:{article.Description} ,Stock:{Convert.ToString(article.Stock)} ,Price:{Convert.ToString(article.Price)}\n";
+      File.AppendAllText(filePath,data);
      
 
     }
 
-public void SearchOnFiles(string filePath,string description){
+public void searchOnFiles(string filePath,string description){
 
-    var lines = File.ReadAllLines(filePath);
+    string[] lines = File.ReadAllLines(filePath);
     
-    var query = from line in lines
-                where line == description
-                select description;
-    
-        foreach (var line in query)
-        {
-            Console.WriteLine(line);
-        }
+    foreach(var line in lines){
 
+       if(line.Contains(description))
+       {
+            Console.WriteLine("The article is present in our stock {0}",line.ToString());
+            break;
+       }
+       else if(!line.Contains(description))
+       {
+           Console.WriteLine("Sorry, the article is not present in ListofArticle.csv!!");
+           break;
+       }
+   }
 }
 }
 

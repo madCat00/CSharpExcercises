@@ -167,14 +167,14 @@ namespace CSharpExercises
               * N.B: The path can be an absolute or relative address.
               */
 
-           way.Path = "ListOfArticle.csv"; //Set the path 
+           way.Path = @"C:\Users\franc\Desktop\CSharpExcercises\ListofArticle.csv"; //Set the path 
 
            var pathway = way.Path;
 
-          SaveFile.CreateNewFile(); //Create method, for create a csv file, container of my article
+          //SaveFile.CreateNewFile(pathway); //Create method, for create a csv file, container of my article
         
-         way.WriteToFile(pathway,socks); //Write an article to a csv file
-        way.WriteToFile(pathway,gloves);
+         //way.WriteToFile(pathway,socks); //Write an article to a csv file
+         //way.WriteToFile(pathway,gloves);
            
 
             /*--------------------- Milestone 2 -----------------------------*/
@@ -193,19 +193,21 @@ namespace CSharpExercises
 
             //Write a logic to search an article from a file
 
-           // way.SearchOnFiles(pathway,"socks");
+            SaveFile search = new SaveFile();
+
+            search.searchOnFiles(pathway,"white"); //Print the entire line of description article
            
            /*--------------------- Milestone 3 -----------------------------*/
 
            //We can add multiple article to the cart
 
-            Cart newCart1 = new Cart(hat,Mark,10);
-            Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
+          //  Cart newCart1 = new Cart(hat,Mark,10);
+          //  Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
 
-            newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
-            newCart1.addMultiplyArticle(hat);
+          //  newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
+          //  newCart1.addMultiplyArticle(hat);
 
-            newCart1.Total();  //Calculate the total from the cart1
+           // newCart1.Total();  //Calculate the total from the cart1
          
             
         }
