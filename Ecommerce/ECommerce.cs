@@ -49,10 +49,7 @@ namespace ECommerce{
 
     }
 
-    public void Search(){
-        
-    }
-        public void Login(){
+      public void Login(){
             Console.WriteLine( $"Hi,{this.FirstName} {this.LastName} ,your mail: {this.Email}. Well done you 're loggin in.");
         }
         public void Buy(){
@@ -194,6 +191,15 @@ class Cart{
 
         AllItems.Add(article);
         
+    }
+
+    public void printToFile(string filePath){
+
+        foreach (var item in AllItems)
+        {
+            var data = $"{item.Description},{Convert.ToString(item.Price)},{Convert.ToString(item.Stock)}\n";
+            File.AppendAllText(filePath,data); 
+        }
     }
 
     public  void Total(){

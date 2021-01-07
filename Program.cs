@@ -195,19 +195,20 @@ namespace CSharpExercises
 
             SaveFile search = new SaveFile();
 
-            search.searchOnFiles(pathway,"white"); //Print the entire line of description article
+            search.searchOnFiles(pathway,"Green"); //Print the entire line of description article
            
            /*--------------------- Milestone 3 -----------------------------*/
 
            //We can add multiple article to the cart
 
-          //  Cart newCart1 = new Cart(hat,Mark,10);
-          //  Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
+            Cart newCart1 = new Cart(hat,Mark,10);
+            Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
 
-          //  newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
-          //  newCart1.addMultiplyArticle(hat);
+            newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
+            newCart1.addMultiplyArticle(hat);
 
-           // newCart1.Total();  //Calculate the total from the cart1
+            newCart1.Total();  //Calculate the total from the cart1
+            newCart1.printToFile(pathway);  //Print in a file all article pre
          
             
         }
