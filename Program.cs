@@ -171,10 +171,10 @@ namespace CSharpExercises
 
            var pathway = way.Path;
 
-          //SaveFile.CreateNewFile(pathway); //Create method, for create a csv file, container of my article
+          SaveFile.CreateNewFile(pathway); //Create method, for create a csv file, container of my article
         
-         //way.WriteToFile(pathway,socks); //Write an article to a csv file
-         //way.WriteToFile(pathway,gloves);
+          //way.WriteToFile(pathway,socks); //Write an article to a csv file
+          //way.WriteToFile(pathway,gloves);
            
 
             /*--------------------- Milestone 2 -----------------------------*/
@@ -195,7 +195,7 @@ namespace CSharpExercises
 
             SaveFile search = new SaveFile();
 
-            search.searchOnFiles(pathway,"Green"); //Print the entire line of description article
+            search.searchOnFiles(pathway,"gloves"); //Print the entire line of description article
            
            /*--------------------- Milestone 3 -----------------------------*/
 
@@ -208,7 +208,8 @@ namespace CSharpExercises
             newCart1.addMultiplyArticle(hat);
 
             newCart1.Total();  //Calculate the total from the cart1
-            newCart1.printToFile(pathway);  //Print in a file all article pre
+            //newCart1.printToFile(pathway);  //Print in a file all article pre
+            search.fileSum(pathway);
          
             
         }

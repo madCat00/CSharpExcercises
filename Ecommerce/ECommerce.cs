@@ -364,6 +364,25 @@ public void searchOnFiles(string filePath,string description){
        }
    }
 }
+
+public void fileSum(string filePath){
+
+     string[] file = File.ReadAllLines(filePath);
+
+     var query = from prices in file
+                 let splitted = prices.Split(',')
+                 select Convert.ToInt32(splitted[3]);
+
+                double sum = 0;
+
+         foreach (var item in query)
+             {
+                sum = sum + item ;
+                Console.WriteLine(sum);
+             }
+        
+  
+     }
 }
 
 }
