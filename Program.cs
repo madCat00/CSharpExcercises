@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ECommerce;
 using ExLinq;
 using System.IO;
+using Users;
 
 
 namespace CSharpExercises
@@ -201,17 +202,37 @@ namespace CSharpExercises
 
            //We can add multiple article to the cart
 
-            Cart newCart1 = new Cart(hat,Mark,10);
-            Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
+            //Cart newCart1 = new Cart(hat,Mark,10);
+            //Cart newCart2 = new Cart(gloves,Lucy,20); //Create a new istance of a cart
 
-            newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
-            newCart1.addMultiplyArticle(hat);
+           // newCart1.addMultiplyArticle(gloves);  //Add multiply article to cart
+            //newCart1.addMultiplyArticle(hat);
 
-            newCart1.Total();  //Calculate the total from the cart1
+            //newCart1.Total();  //Calculate the total from the cart1
             //newCart1.printToFile(pathway);  //Print in a file all article pre
-            search.fileSum(pathway);
-         
+            //search.fileSum(pathway); //Print all prices in ListOfArticle.csv
             
+            User Giovanni = new User("Giovanni");
+            
+            Giovanni.Age = 22; //Giovanni can insert his age
+
+            User Lucia = new User("Lucia"); //Lucia can't insert his age
+
+            Lucia.Age = 15;
+            Console.WriteLine(Lucia.Age);
+
+            User Caterina = new User("Caterina");
+            User Cristiano = new User("Cristiano"); // Extrapolate name in a list of name
+
+            User addcustomer = new User(); //Create method to add user in a list
+
+            addcustomer.addUser(Giovanni);  // Add customer to a list
+            addcustomer.addUser(Lucia);
+            addcustomer.addUser(Caterina);
+            addcustomer.addUser(Cristiano);
+            
+            addcustomer.Extrapolate();
+          
         }
     }       
 }

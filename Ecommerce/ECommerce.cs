@@ -33,9 +33,10 @@ namespace ECommerce{
 
    public void CheckAge(){
 
-         if (Age < 18){
+         if (Age < 18)
+         {
            Console.WriteLine("You're not be able to buy any article");
-       } else 
+         } else 
        {
            Console.WriteLine("Yoo're able to buy any article");
        }
@@ -71,7 +72,7 @@ namespace ECommerce{
     
     }
 
-class Customers {
+class Customers { 
 
     private List<Customer> _Customerlist;
 
@@ -204,7 +205,7 @@ class Cart{
 
     public  void Total(){
 
-        var total= AllItems.Aggregate(0.00,(acc,val)=>acc +val.Price);
+        var total= AllItems.Aggregate(0.00,(acc,val)=>acc + val.Price);
 
         Console.WriteLine("Prices {0}",total);
        
@@ -250,12 +251,12 @@ public Article search (string description){
 
  foreach (Article items in ListOfItems)
  {
-     if(items.Description == description){
+     if(items.Description == description){      //Guardare i metodi della Lista. C'è find 
          return items;
      }
 
      }
-     return null;
+     return null; //Far ritornare qualsiasi cosa ma NON NUll. Il null può essere causa di bug.
  }
 
 
@@ -384,6 +385,7 @@ public void fileSum(string filePath){
   
      }
 }
+
 
 }
 
