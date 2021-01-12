@@ -45,18 +45,19 @@ namespace Users
         Console.WriteLine(_listOfUser.Count());
     }
 
-    public void Extrapolate()
+    public void checkName()
     {
         string path = @"C:\Users\franc\Desktop\CSharpExcercises\Userlist.csv";
        
-        foreach(var users in _listOfUser)
+        _listOfUser.ForEach(delegate(User users)
         {
             if(users.name.Contains("C"))
             {
-                Console.WriteLine(users.name);
-                File.AppendAllText(path,users.name);
+            Console.WriteLine(users.name);
+            File.AppendAllText(path,(users.name + Environment.NewLine));
             }
-        }
+        });
+       
     }
 
     }

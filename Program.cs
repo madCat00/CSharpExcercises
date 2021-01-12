@@ -231,7 +231,7 @@ namespace CSharpExercises
             addcustomer.addUser(Caterina);
             addcustomer.addUser(Cristiano);
             
-            addcustomer.Extrapolate();
+            addcustomer.checkName();
           
         }
     }       
