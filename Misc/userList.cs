@@ -7,6 +7,7 @@ namespace Users
 {
     class User
     {
+        
         private int _age;
         public string name;
         private List<User> _listOfUser;
@@ -16,11 +17,9 @@ namespace Users
         get => _age;
 
         set {
-                 _age = value;
-
-                if( this._age > 18)
+                  if( value >= 18)
                 {
-                   
+                    _age = value;
                     Console.WriteLine("OK. Your age as been insert correctly");
                     
                 } else

@@ -210,7 +210,7 @@ namespace CSharpExercises
 
             //newCart1.Total();  //Calculate the total from the cart1
             //newCart1.printToFile(pathway);  //Print in a file all article pre
-            //search.fileSum(pathway); //Print all prices in ListOfArticle.csv
+            search.fileSum(pathway); //Print all prices in ListOfArticle.csv
             
             User Giovanni = new User("Giovanni");
             
