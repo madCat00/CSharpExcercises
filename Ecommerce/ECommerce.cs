@@ -4,7 +4,7 @@ using System.Linq;
 using System.IO;
 
 namespace ECommerce{
-    class Customer{
+    class Customer : GenericCustomer{
         public int Id;
         private string FirstName;
         private string  LastName;
@@ -51,8 +51,10 @@ namespace ECommerce{
     }
 
       public void Login(){
-            Console.WriteLine( $"Hi,{this.FirstName} {this.LastName} ,your mail: {this.Email}. Well done you 're loggin in.");
-        }
+      }
+    public void exitLogin(){
+        
+    }
         public void Buy(){
             Console.WriteLine( "Buy");
 
@@ -387,5 +389,14 @@ public void fileSum(string filePath){
 }
 
 
+interface GenericCustomer{
+    string name{
+        get => name;
+        set => name = value;
+    }
+  void Login();
+  void exitLogin();
+  
+}
 }
 

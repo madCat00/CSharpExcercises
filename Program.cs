@@ -225,13 +225,21 @@ namespace CSharpExercises
             User Cristiano = new User("Cristiano"); // Extrapolate name in a list of name
 
             User addcustomer = new User(); //Create method to add user in a list
-
+            
             addcustomer.addUser(Giovanni);  // Add customer to a list
             addcustomer.addUser(Lucia);
             addcustomer.addUser(Caterina);
             addcustomer.addUser(Cristiano);
             
             addcustomer.checkName();
+          
+
+          var speed = new ItalianMeter(100,30);
+          var speed2 = new englishMeter(200,30);
+
+          Console.WriteLine($"The speed in km/h is {speed.speed()}");
+          Console.WriteLine($"The speed in mph is {speed2.speed()}");
+
           
         }
     }       

@@ -17,7 +17,7 @@ namespace Users
         get => _age;
 
         set {
-                  if( value >= 18)
+                  if ( value >= 18)
                 {
                     _age = value;
                     Console.WriteLine("OK. Your age as been insert correctly");
